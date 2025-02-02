@@ -21,3 +21,8 @@ body{
     appearance: none;
     background-image: none;
 }
+
+
+.money-flow-table-no-data{
+    height: 100vh;
+}

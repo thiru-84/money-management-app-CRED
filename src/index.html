@@ -9,7 +9,8 @@
 
 <body>
     <section class="md:flex md:gap-10">
-        <main class="font-[Work Sans] font-bold lg:w-2/6 lg:py-8 lg:pl-8 lg:pr-0 p-2 border-b border-gray-200 lg:border-b-0">
+        <main
+            class="font-[Work Sans] font-bold lg:w-2/6 lg:py-8 lg:pl-8 lg:pr-0 p-2 border-b border-gray-200 lg:border-b-0">
             <!-- date and time -->
             <div>
                 <p id="current-date" class="text-sm text-gray-500 font-normal">01-FEB-2024</p>
@@ -20,8 +21,10 @@
                     <!-- heading and message -->
                     <div class="lg:mt-24 mt-12">
                         <h2 class="text-[24px] leading-[22px] lg:hidden ">Track and Manageyour Money Smarter</h2>
-                        <h2 class="text-[36px] leading-[34px] hidden lg:block">Track and Manage <br>your Money Smarter</h2>
-                        <p class="font-normal opacity-50 pt-2 lg:pt-3 text-sm tracking-[1px]">Better money management for
+                        <h2 class="text-[36px] leading-[34px] hidden lg:block">Track and Manage <br>your Money Smarter
+                        </h2>
+                        <p class="font-normal opacity-50 pt-2 lg:pt-3 text-sm tracking-[1px]">Better money management
+                            for
                             better
                             savings.
                         </p>
@@ -37,8 +40,8 @@
 
                         <div>
                             <ul
-                                class="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex">
-                                <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
+                                class="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-lg sm:flex">
+                                <li class="w-full border-b border-gray-300 sm:border-b-0 sm:border-r">
                                     <div class="flex items-center ps-3">
                                         <input id="radio-all" type="radio" name="list-radio" checked
                                             class="w-4 h-4 text-white border-2 border-black bg-black focus:ring-black">
@@ -46,7 +49,7 @@
                                             class="w-full py-3 ms-2 text-sm font-medium text-gray-900 cursor-pointer">All</label>
                                     </div>
                                 </li>
-                                <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
+                                <li class="w-full border-b border-gray-300 sm:border-b-0 sm:border-r">
                                     <div class="flex items-center ps-3">
                                         <input id="radio-revenue" type="radio" name="list-radio"
                                             class="w-4 h-4 text-white border-2 border-black bg-black focus:ring-black">
@@ -81,154 +84,173 @@
 
         <!-- right section -->
         <section class="w-full h-screen bg-[#F7F7F7] border-l border-gray-200 mt-14 lg:mt-0">
-
+            <div class="money-flow-table-no-data flex flex-col justify-center items-center align-center h-100">
+                <div class="h-7.5 w-7.5 text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+                      </svg>
+                      
+                      
+                      
+                      
+                      
+                </div>
+                    <p id="current-date" class="text-sm text-gray-500 font-normal text-center leading-[18px] pt-1">Start
+                        Managing <br>Your Money</p>
+                
+            </div>
             <!-- table -->
-            <div class="relative overflow-x-auto">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b border-gray-200">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">Amount</th>
-                            <th scope="col" class="px-6 py-3">Description</th>
-                            <th scope="col" class="px-6 py-3">State</th>
-                            <th scope="col" class="px-6 py-3">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <div class="relative overflow-x-auto">
-                            <!-- First Row (First and Second State) -->
-                            <tr class="bg-white border-b border-gray-200">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                    <span class="amount-text ">$99</span>
-                                    <input type="text" class="amount-input p-2 border border-gray-300 rounded-md hidden"
-                                        value="$99">
-                                </th>
-                                <td class="px-6 py-4">
-                                    <span class="description-text ">Magic Mouse 2</span>
-                                    <input type="text"
-                                        class="description-input-second p-2 border border-gray-300 rounded-md hidden"
-                                        value="Magic Mouse 2">
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="state-text ">Available</span>
-                                    <div class="hidden">
-                                        <article class="state-dropdown inline-block relative">
-                                            <select
-                                                class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
-                                                <option>Available</option>
-                                                <option>Out of Stock</option>
-                                                <option>Pre-order</option>
-                                            </select>
-                                            <svg class="w-4 h-4 absolute right-2 top-2 text-gray-500 pointer-events-none"
-                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M19 9l-7 7-7-7"></path>
-                                            </svg>
-                                        </article>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex space-x-2 ">
-                                        <button class="text-blue-500">Edit</button>
-                                        <span class="">|</span>
-                                        <button class="text-red-500 ">Delete</button>
-                                    </div>
-                                    <div class="hidden">
-                                        <button class="text-green-700">Save</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- Second Row (First and Second State) -->
-                            <tr class="bg-white border-b border-gray-200">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                    <span class="amount-text ">$99</span>
-                                    <input type="text" class="amount-input p-2 border border-gray-300 rounded-md hidden"
-                                        value="$99">
-                                </th>
-                                <td class="px-6 py-4">
-                                    <span class="description-text ">Magic Mouse 2</span>
-                                    <input type="text"
-                                        class="description-input-second p-2 border border-gray-300 rounded-md hidden"
-                                        value="Magic Mouse 2">
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="state-text ">Available</span>
+            <div class="relative overflow-x-auto hidden">
 
-                                    <div class="hidden">
-                                        <article class="state-dropdown inline-block relative">
-                                            <select
-                                                class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
-                                                <option>Available</option>
-                                                <option>Out of Stock</option>
-                                                <option>Pre-order</option>
-                                            </select>
-                                            <svg class="w-4 h-4 absolute right-2 top-2 text-gray-500 pointer-events-none"
-                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M19 9l-7 7-7-7"></path>
-                                            </svg>
-                                        </article>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex space-x-2 ">
-                                        <button class="text-blue-500">Edit</button>
-                                        <span class="">|</span>
-                                        <button class="text-red-500 ">Delete</button>
-                                    </div>
-                                    <div class="hidden">
-                                        <button class="text-green-700">Save</button>
-                                    </div>
-                                </td>
+                <div>
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b border-gray-200">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Amount</th>
+                                <th scope="col" class="px-6 py-3">Description</th>
+                                <th scope="col" class="px-6 py-3">State</th>
+                                <th scope="col" class="px-6 py-3">Actions</th>
                             </tr>
-                            <!-- Third Row (First and Second State) -->
-                            <tr class="bg-white border-b border-gray-200">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                    <span class="amount-text hidden">$99</span>
-                                    <input type="text" class="amount-input p-2 border border-gray-300 rounded-md"
-                                        value="$99">
-                                </th>
-                                <td class="px-6 py-4">
-                                    <span class="description-text hidden">Magic Mouse 2</span>
-                                    <input type="text"
-                                        class="description-input-second p-2 border border-gray-300 rounded-md"
-                                        value="Magic Mouse 2">
-                                </td>
-                                <td class="px-6 py-4">
-                                    <span class="state-text hidden">Available</span>
+                        </thead>
+                        <tbody class="money-flow-table">
+                            <div class="relative overflow-x-auto">
+                                <!-- First Row (First and Second State) -->
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        <span class="amount-text ">$99</span>
+                                        <input type="text"
+                                            class="amount-input p-2 border border-gray-300 rounded-md hidden"
+                                            value="$99">
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        <span class="description-text ">Magic Mouse 2</span>
+                                        <input type="text"
+                                            class="description-input-second p-2 border border-gray-300 rounded-md hidden"
+                                            value="Magic Mouse 2">
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="state-text ">Available</span>
+                                        <div class="hidden">
+                                            <article class="state-dropdown inline-block relative">
+                                                <select
+                                                    class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
+                                                    <option>Available</option>
+                                                    <option>Out of Stock</option>
+                                                    <option>Pre-order</option>
+                                                </select>
+                                                <svg class="w-4 h-4 absolute right-2 top-2 text-gray-500 pointer-events-none"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </article>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex space-x-2 ">
+                                            <button class="text-blue-500">Edit</button>
+                                            <span class="">|</span>
+                                            <button class="text-red-500 ">Delete</button>
+                                        </div>
+                                        <div class="hidden">
+                                            <button class="text-green-700">Save</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Second Row (First and Second State) -->
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        <span class="amount-text ">$99</span>
+                                        <input type="text"
+                                            class="amount-input p-2 border border-gray-300 rounded-md hidden"
+                                            value="$99">
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        <span class="description-text ">Magic Mouse 2</span>
+                                        <input type="text"
+                                            class="description-input-second p-2 border border-gray-300 rounded-md hidden"
+                                            value="Magic Mouse 2">
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="state-text ">Available</span>
 
-                                    <div class="">
-                                        <article class="state-dropdown inline-block relative">
-                                            <select
-                                                class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
-                                                <option>Available</option>
-                                                <option>Out of Stock</option>
-                                                <option>Pre-order</option>
-                                            </select>
-                                            <svg class="w-4 h-4 absolute right-2 top-2 text-gray-500 pointer-events-none"
-                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M19 9l-7 7-7-7"></path>
-                                            </svg>
-                                        </article>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="flex space-x-2 hidden">
-                                        <button class="text-blue-500">Edit</button>
-                                        <span class="">|</span>
-                                        <button class="text-red-500 ">Delete</button>
-                                    </div>
-                                    <div>
-                                        <button class="text-green-700">Save</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </div>
-                    </tbody>
-                </table>
+                                        <div class="hidden">
+                                            <article class="state-dropdown inline-block relative">
+                                                <select
+                                                    class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
+                                                    <option>Available</option>
+                                                    <option>Out of Stock</option>
+                                                    <option>Pre-order</option>
+                                                </select>
+                                                <svg class="w-4 h-4 absolute right-2 top-2 text-gray-500 pointer-events-none"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </article>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex space-x-2 ">
+                                            <button class="text-blue-500">Edit</button>
+                                            <span class="">|</span>
+                                            <button class="text-red-500 ">Delete</button>
+                                        </div>
+                                        <div class="hidden">
+                                            <button class="text-green-700">Save</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Third Row (First and Second State) -->
+                                <tr class="bg-white border-b border-gray-200">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        <span class="amount-text hidden">$99</span>
+                                        <input type="text" class="amount-input p-2 border border-gray-300 rounded-md"
+                                            value="$99">
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        <span class="description-text hidden">Magic Mouse 2</span>
+                                        <input type="text"
+                                            class="description-input-second p-2 border border-gray-300 rounded-md"
+                                            value="Magic Mouse 2">
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="state-text hidden">Available</span>
+
+                                        <div class="">
+                                            <article class="state-dropdown inline-block relative">
+                                                <select
+                                                    class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
+                                                    <option>Available</option>
+                                                    <option>Out of Stock</option>
+                                                    <option>Pre-order</option>
+                                                </select>
+                                                <svg class="w-4 h-4 absolute right-2 top-2 text-gray-500 pointer-events-none"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </article>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex space-x-2 hidden">
+                                            <button class="text-blue-500">Edit</button>
+                                            <span class="">|</span>
+                                            <button class="text-red-500 ">Delete</button>
+                                        </div>
+                                        <div>
+                                            <button class="text-green-700">Save</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </div>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
 
