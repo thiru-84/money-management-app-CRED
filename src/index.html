@@ -34,9 +34,9 @@
                     <div class="w-100 lg:pt-10 pt-6">
 
                         <input type="text" id="user-entered-amount" placeholder="Enter Amount"
-                            class="mb-2 block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base font-normal focus:ring-blue-500 focus:border-blue-500 hover:border-gray-400 active:border-blue-600">
+                            class=" user-entered-amount mb-2 block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base font-normal focus:ring-blue-500 focus:border-blue-500 hover:border-gray-400 active:border-blue-600">
                         <textarea id="user-entered-description" placeholder="Short Description"
-                            class="mb-2 block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base font-normal focus:ring-blue-500 focus:border-blue-500 hover:border-gray-400 active:border-blue-600 resize-y"></textarea>
+                            class=" user-entered-description mb-2 block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base font-normal focus:ring-blue-500 focus:border-blue-500 hover:border-gray-400 active:border-blue-600 resize-y"></textarea>
 
                         <div>
                             <ul
@@ -114,19 +114,19 @@
                                 <!-- First Row (First and Second State) -->
                                 <!-- <tr class="bg-white border-b border-gray-200">
                                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <span class="amount-text ">$99</span>
+                                        <span class="amount-text ">₹1000</span>
                                         <input type="text"
                                             class="amount-input p-2 border border-gray-300 rounded-md hidden"
-                                            value="$99">
+                                            value="₹1000">
                                     </th>
                                     <td class="px-6 py-4">
-                                        <span class="description-text ">Magic Mouse 2</span>
+                                        <span class="description-text ">Example Description</span>
                                         <input type="text"
                                             class="description-input-second p-2 border border-gray-300 rounded-md hidden"
-                                            value="Magic Mouse 2">
+                                            value="Example Description">
                                     </td>
                                     <td class="px-6 py-4">
-                                        <span class="state-text ">Available</span>
+                                        <span class="state-text ">All</span>
                                         <div class="hidden">
                                             <article class="state-dropdown inline-block relative">
                                                 <select
@@ -145,19 +145,19 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4">
-                                        <div class="flex space-x-2 ">
-                                            <button class="text-blue-500">Edit</button>
-                                            <span class="">|</span>
-                                            <button class="text-red-500 ">Delete</button>
+                                        <div class="flex space-x-2">
+                                            <button class="text-blue-500 cursor-pointer" onclick="editTable()">Edit</button>
+                                            <span>|</span>
+                                            <button class="text-red-500 cursor-pointer" onclick="deleteTable()">Delete</button>
                                         </div>
                                         <div class="hidden">
-                                            <button class="text-green-700">Save</button>
+                                            <button class="text-green-700 cursor-pointer" onclick="saveTable()">Save</button>
                                         </div>
                                     </td>
-                                </tr>
+                                </tr> -->
                                 
 
-                                <tr class="bg-white border-b border-gray-200">
+                                <!-- <tr class="bg-white border-b border-gray-200">
                                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                         <span class="amount-text ">$99</span>
                                         <input type="text"
