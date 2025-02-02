@@ -11,10 +11,12 @@ JS - App logics.
 
 # My Journey
 
-What a coincidence! I have been creating this money management app on Union Government Budget Day (Feb 1)!
+What a coincidence! I have been working on this money management app on Union Government Budget Day (Feb 1)!
 
-Putting my glorification of the coincidence aside, I started focusing on app development since I only have two days to complete the task. My journey began with designing the layout using Figma. Even though design is an easy job, I aimed for a simple design and focused purely on JavaScript development. I used online available code snippets and modified them to match my taste. Once that was done, I quickly fixed responsiveness, which became an easy task for me as well since I have started using Tailwind CSS more often for development.
+Putting my glorification of the coincidence aside, I started focusing on app development since I only had two days to complete the task. My journey began with designing the layout using Figma. Even though design is an easy job for me, I aimed for a simple design and focused purely on JavaScript development. I used online code snippets and modified them to match my taste. Once that was done, I quickly fixed the responsiveness, which became an easy task for me since I have started using Tailwind CSS more often for development.
 
-Initially I focused on adding part by storing values inside variables, Once that been done with the help of eventlistener. I have updated the collected information dynamically to the table before appending it. I have come across multiple errors, undefine and many more... ChatGPT helped me resolve it 😒. Now I can able to write 80% correct code and hopefully I will increase it gradually!
+Initially, I focused on adding functionality by storing values to dedicated variables. Once that was done with the help of the event listener, I updated the collected information dynamically to the table and append it. I came across multiple errors, undefined values, and many others... ChatGPT helped me resolve them 😒. Now I am able to write 80% correct code and hopefully, I will increase it gradually!
 
-Then I have completed the delete part such is easy with .remove() method. The progress was smooth till now and once I started to focus on edit and updating the stored data, I encountered multiple issues and then I need to focus on local storage as well! I don't even have any clue about local storage. And once again I expect help from friend ChatGPT on data updating functionality and he messed my entire code. Don't trust ChatGPT.
+Then, I completed the delete functionality, which was easy with the ".remove()" method. The progress was smooth until I started focusing on editing and updating the stored data. I encountered multiple issues, and then I needed to focus on local storage as well! I didn't even have any clue about local storage. With instructions and help from ChatGPT, I achieved the update functionality!
+
+The key here is that relying on ChatGPT for solutions is not ideal and sometimes that totally messes up the code, but it helps us complete the project. With an understanding of the programming language we are using, we can leverage AI, but it's not as smart as exaggerated on social media.

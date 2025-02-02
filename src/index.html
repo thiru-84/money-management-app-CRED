@@ -85,21 +85,22 @@
         <!-- right section -->
         <section class="w-full h-screen bg-[#F7F7F7] border-l border-gray-200 mt-14 lg:mt-0">
             <!-- Show this if No Data in the Right Section -->
-            <!-- <div class="money-flow-table-no-data flex flex-col justify-center items-center align-center h-100">
-                <div class="h-8 w-8 text-gray-500 flex justify-center items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
-                      </svg>
-                </div>
-                    <p id="current-date" class="text-sm text-gray-500 font-normal text-center leading-[18px] pt-2">Start
-                        Managing <br>Your Money</p>                
-            </div> -->
+
 
             <!-- Show this if More than One Data in the Right Section -->
             <!-- table -->
             <div class="relative overflow-x-auto money-flow-table-container">
 
-                <div>
+                <div class="money-flow-table-no-data flex flex-col justify-center items-center align-center h-100">
+                    <div class="h-8 w-8 text-gray-500 flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5.5 text-rose-600">
+                            <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                        </svg>
+                    </div>
+                    <p id="current-date" class="text-[13px] text-gray-500 font-normal text-center leading-[16px] pt-2 opacity-80">Start managing <br>your money!</p>
+                </div>
+            
+                <div class="money-flow-table-with-data">
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b border-gray-200">
                             <tr>
@@ -110,147 +111,12 @@
                             </tr>
                         </thead>
                         <tbody class="money-flow-table">
-                            <div id="dynamic-table-data-placeholder" class="relative overflow-x-auto">
-                                <!-- First Row (First and Second State) -->
-                                <!-- <tr class="bg-white border-b border-gray-200">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <span class="amount-text ">₹1000</span>
-                                        <input type="text"
-                                            class="amount-input p-2 border border-gray-300 rounded-md hidden"
-                                            value="₹1000">
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        <span class="description-text ">Example Description</span>
-                                        <input type="text"
-                                            class="description-input-second p-2 border border-gray-300 rounded-md hidden"
-                                            value="Example Description">
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <span class="state-text ">All</span>
-                                        <div class="hidden">
-                                            <article class="state-dropdown inline-block relative">
-                                                <select
-                                                    class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
-                                                    <option>Available</option>
-                                                    <option>Out of Stock</option>
-                                                    <option>Pre-order</option>
-                                                </select>
-                                                <svg class="w-4 h-4 absolute right-2 top-2 text-gray-500 pointer-events-none"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                                </svg>
-                                            </article>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex space-x-2">
-                                            <button class="text-blue-500 cursor-pointer" onclick="editTable()">Edit</button>
-                                            <span>|</span>
-                                            <button class="text-red-500 cursor-pointer" onclick="deleteTable()">Delete</button>
-                                        </div>
-                                        <div class="hidden">
-                                            <button class="text-green-700 cursor-pointer" onclick="saveTable()">Save</button>
-                                        </div>
-                                    </td>
-                                </tr> -->
-                                
-
-                                <!-- <tr class="bg-white border-b border-gray-200">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <span class="amount-text ">$99</span>
-                                        <input type="text"
-                                            class="amount-input p-2 border border-gray-300 rounded-md hidden"
-                                            value="$99">
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        <span class="description-text ">Magic Mouse 2</span>
-                                        <input type="text"
-                                            class="description-input-second p-2 border border-gray-300 rounded-md hidden"
-                                            value="Magic Mouse 2">
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <span class="state-text ">Available</span>
-
-                                        <div class="hidden">
-                                            <article class="state-dropdown inline-block relative">
-                                                <select
-                                                    class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
-                                                    <option>Available</option>
-                                                    <option>Out of Stock</option>
-                                                    <option>Pre-order</option>
-                                                </select>
-                                                <svg class="w-4 h-4 absolute right-2 top-2 text-gray-500 pointer-events-none"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                                </svg>
-                                            </article>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex space-x-2 ">
-                                            <button class="text-blue-500">Edit</button>
-                                            <span class="">|</span>
-                                            <button class="text-red-500 ">Delete</button>
-                                        </div>
-                                        <div class="hidden">
-                                            <button class="text-green-700">Save</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                
-
-                                <tr class="bg-white border-b border-gray-200">
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        <span class="amount-text hidden">$99</span>
-                                        <input type="text" class="amount-input p-2 border border-gray-300 rounded-md"
-                                            value="$99">
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        <span class="description-text hidden">Magic Mouse 2</span>
-                                        <input type="text"
-                                            class="description-input-second p-2 border border-gray-300 rounded-md"
-                                            value="Magic Mouse 2">
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <span class="state-text hidden">Available</span>
-
-                                        <div class="">
-                                            <article class="state-dropdown inline-block relative">
-                                                <select
-                                                    class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
-                                                    <option>Available</option>
-                                                    <option>Out of Stock</option>
-                                                    <option>Pre-order</option>
-                                                </select>
-                                                <svg class="w-4 h-4 absolute right-2 top-2 text-gray-500 pointer-events-none"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                                </svg>
-                                            </article>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex space-x-2 hidden">
-                                            <button class="text-blue-500">Edit</button>
-                                            <span class="">|</span>
-                                            <button class="text-red-500 ">Delete</button>
-                                        </div>
-                                        <div>
-                                            <button class="text-green-700">Save</button>
-                                        </div>
-                                    </td>
-                                </tr> -->
-                            </div>
+                            <!-- Dynamically added rows will go here -->
                         </tbody>
                     </table>
                 </div>
             </div>
+            
 
 
 

@@ -71,9 +71,10 @@ radios.forEach(radio => {
 
 // -----------------------------------------------------Add Table Functionality-----------------------------------------------------
 // Function to add new row
+// Function to add new row
 function addToTable() {
+    // previous functionality
     if (!userEnteredAmount.trim()) {
-        console.log('Amount is empty, not adding to the table');
         return;
     }
 
@@ -120,8 +121,7 @@ function addToTable() {
             <button class="save-button text-green-700 cursor-pointer">Save</button>
         </div>
     </td>
-`;
-
+    `;
 
     // Update the dropdown selection based on the selectedRadio
     let selectElement = dynamicTableData.querySelector('.state-select');
@@ -132,8 +132,24 @@ function addToTable() {
         }
     });
 
+    // Append the new row
     dynamicTableBody.appendChild(dynamicTableData);
 
+    // Check the table's row count and toggle visibility
+    let checkForDataInTable = document.querySelectorAll('.money-flow-table tr').length;
+    let noDatatoshow = document.querySelector('.money-flow-table-no-data');
+    let dataToShow = document.querySelector('.money-flow-table-with-data');
+
+    // If there's data, hide "no data" message and show table
+    if (checkForDataInTable >= 1) {
+        noDatatoshow.style.display = 'none';  // Hide "no data" message
+        dataToShow.style.display = 'block';  // Show the table
+    } else {
+        noDatatoshow.style.display = 'flex'; // Show "no data" message
+        dataToShow.style.display = 'none';  // Hide the table
+    }
+
+    // Add event listeners for the new row
     dynamicTableData.querySelector('.delete-button').addEventListener('click', function (event) {
         deleteTable(event);
     });
@@ -144,6 +160,8 @@ function addToTable() {
         saveTable(event);
     });
 }
+
+
 
 
 // Function to delete a row from the table

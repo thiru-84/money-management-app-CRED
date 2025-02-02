@@ -25,4 +25,10 @@ body{
 
 .money-flow-table-no-data{
     height: 100vh;
+    display: flex;
 }
+
+.money-flow-table-with-data {
+    display: none;
+}
+
