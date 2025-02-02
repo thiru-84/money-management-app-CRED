@@ -108,7 +108,7 @@ function addToTable() {
     </td>
     `;
 
-    // Update the dropdown selection based on the selectedRadio
+
     let selectElement = dynamicTableData.querySelector('.state-select');
     let options = selectElement.querySelectorAll('option');
     options.forEach(option => {
@@ -117,21 +117,21 @@ function addToTable() {
         }
     });
 
-    // Append the new row
+  
     dynamicTableBody.appendChild(dynamicTableData);
 
-    // Check the table's row count and toggle visibility
+  
     let checkForDataInTable = document.querySelectorAll('.money-flow-table tr').length;
     let noDatatoshow = document.querySelector('.money-flow-table-no-data');
     let dataToShow = document.querySelector('.money-flow-table-with-data');
 
-    // If there's data, hide "no data" message and show table
+    // Hide when "no data" message and show table
     if (checkForDataInTable >= 1) {
-        noDatatoshow.style.display = 'none';  // Hide "no data" message
-        dataToShow.style.display = 'block';  // Show the table
+        noDatatoshow.style.display = 'none';  
+        dataToShow.style.display = 'block';  
     } else {
-        noDatatoshow.style.display = 'flex'; // Show "no data" message
-        dataToShow.style.display = 'none';  // Hide the table
+        noDatatoshow.style.display = 'flex'; 
+        dataToShow.style.display = 'none';  
     }
 
     // Add event listeners for the new row
@@ -147,7 +147,7 @@ function addToTable() {
 }
 
 
-
+// -----------------------------------------------------Delete Functionality-----------------------------------------------------
 
 // Function to delete a row from the table
 function deleteTable(event) {
@@ -171,12 +171,12 @@ document.addEventListener('click', function (event) {
     }
 });
 
-
+// -----------------------------------------------------Save Functionality-----------------------------------------------------
 // Function to save a row from the table
 function saveTable(event) {
-    let row = event.target.closest('tr'); // Get the row containing the save button
-    let defaultModes = row.querySelectorAll('.default-mode'); // Get all default-mode elements
-    let editModes = row.querySelectorAll('.edit-mode'); // Get all edit-mode elements
+    let row = event.target.closest('tr'); 
+    let defaultModes = row.querySelectorAll('.default-mode'); 
+    let editModes = row.querySelectorAll('.edit-mode'); 
 
     // Get the updated values from the inputs and dropdown
     let updatedAmount = row.querySelector('.amount-input').value;
@@ -194,3 +194,4 @@ function saveTable(event) {
 }
 
 
+// -----------------------------------------------------Flow Count Functionality-----------------------------------------------------
