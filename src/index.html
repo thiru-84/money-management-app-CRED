@@ -10,18 +10,27 @@
 <body>
     <section class="md:flex md:gap-10">
         <main
-            class="font-[Work Sans] font-bold lg:w-2/6 lg:py-8 lg:pl-8 lg:pr-0 p-2 border-b border-gray-200 lg:border-b-0 ">
+            class="font-[Work Sans] font-bold lg:w-2/6 lg:py-8 lg:pl-8 lg:pr-0 p-2 border-b border-gray-300 lg:border-b-0 ">
             <!-- date and time -->
-            <div class="">
-                <p id="current-date" class="text-sm text-gray-500 font-normal"></p>
+            <div class="flex justify-between">
 
+                <p id="current-date" class="text-sm text-gray-500 font-normal"></p>
+                
+                <div class="lg:block hidden">
+                    <p class="text-sm text-gray-500 font-normal">© Created by <a
+                            href="https://github.com/thiru-84" class="text-black underline font-meidum"
+                            target="_blank">Thiru</a></p>
+                </div>
+
+                
+                
             </div>
             <div class="flex flex-col justify-between h-full">
                 <div>
                     <!-- heading and message -->
                     <div class="lg:mt-24 mt-12">
-                        <h2 class="text-[24px] leading-[22px] lg:hidden ">Track and Manageyour Money Smarter</h2>
-                        <h2 class="text-[36px] leading-[34px] hidden lg:block">Track and Manage <br>your Money Smarter
+                        <h2 class="text-[24px] leading-[22px] lg:hidden ">Track & Manage Your Money Smarter</h2>
+                        <h2 class="text-[36px] leading-[35px] hidden lg:block">Track & Manage Your Money Smarter
                         </h2>
                         <p class="font-normal opacity-50 pt-2 lg:pt-3 text-sm tracking-[1px]">Better money management
                             for
@@ -31,7 +40,7 @@
                     </div>
 
                     <!-- input field -->
-                    <div class="w-100 lg:pt-10 pt-6">
+                    <div class="w-100 lg:pt-10 pt-6 w-full">
 
                         <input type="text" id="user-entered-amount" placeholder="Enter Amount"
                             class=" user-entered-amount mb-2 block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white text-base font-normal focus:ring-blue-500 focus:border-blue-500 hover:border-gray-400 active:border-blue-600">
@@ -72,18 +81,36 @@
                             class="w-full mt-6 text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5  mb-2 dark:bg-black dark:hover:bg-gray-900 dark:border-gray-700">Add</button>
 
                     </div>
+
+                    
                 </div>
 
-                <div class="lg:block hidden">
-                    <p class="text-sm text-gray-500 font-normal">© designed and developed by <a
-                            href="https://github.com/thiru-84" class="text-black underline font-meidum"
-                            target="_blank">Thiru</a></p>
+
+                <div class="lg:mt-32 border-y border-gray-300 py-8">
+                    <div class="flex justify-between">
+                        <div class="flex flex-col justify-center align-center items-center">
+                            <h3>0</h3>
+                            <p class="font-normal">Total Income</p>
+                        </div>
+                        <hr class="border border-gray-300">
+                        <div class="flex flex-col justify-center align-center items-center">
+                            <h3>0</h3>
+                            <p class="font-normal">Total Expenses</p>
+                        </div>
+                        <hr class="border border-gray-300">
+                        <div class="flex flex-col justify-center align-center items-center">
+                            <h3>0</h3>
+                            <p class="font-normal">Net Balance </p>
+                        </div>
+                    </div>
                 </div>
+
+                
             </div>
         </main>
 
         <!-- right section -->
-        <section class="w-full h-screen bg-[#F7F7F7] border-l border-gray-200 mt-14 lg:mt-0">
+        <section class="w-full h-screen bg-[#F7F7F7] border-l border-gray-300 mt-14 lg:mt-0">
             <!-- Show this if No Data in the Right Section -->
 
 
@@ -102,7 +129,7 @@
             
                 <div class="money-flow-table-with-data">
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b border-gray-200">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b border-gray-300">
                             <tr>
                                 <th scope="col" class="px-6 py-3">Amount</th>
                                 <th scope="col" class="px-6 py-3">Description</th>

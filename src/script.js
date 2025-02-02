@@ -12,21 +12,6 @@ const dateFormat = {
 document.getElementById("current-date").innerHTML = date.toLocaleString('en-UK', dateFormat);
 
 
-// -----------------------------------------------------Hide and Show Table-----------------------------------------------------
-// Hide and Show table 
-// let noDataInTheTable = document.querySelector('.money-flow-table-no-data');
-// let moreThanOneDataOnTable = document.querySelector('.money-flow-table-container');
-// let tableRows = document.querySelectorAll('.money-flow-table tr');
-
-// Show table if no data in table
-// if (tableRows.length > 0) {
-//     noDataInTheTable.style.display = 'none';
-//     moreThanOneDataOnTable.style.display = 'block';
-// } else { //Hide table if no data in table
-//     noDataInTheTable.style.display = 'flex';
-//     moreThanOneDataOnTable.style.display = 'none';
-// }
-
 
 // -----------------------------------------------------Collect Information-----------------------------------------------------
 
@@ -80,7 +65,7 @@ function addToTable() {
 
     let dynamicTableBody = document.querySelector('.money-flow-table');
     let dynamicTableData = document.createElement('tr');
-    dynamicTableData.classList.add('bg-white', 'border-b', 'border-gray-200');
+    dynamicTableData.classList.add('bg-white', 'border-b', 'border-gray-300');
 
     let tableRows = document.querySelectorAll('.money-flow-table tr').length;
     dynamicTableData.id = `table-data-${tableRows + 1}`;
