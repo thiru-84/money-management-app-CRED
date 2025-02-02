@@ -56,13 +56,19 @@ radios.forEach(radio => {
 
 // -----------------------------------------------------Add Table Functionality-----------------------------------------------------
 // Function to add new row
-// Function to add new row
+
+// Initialize total amounts outside the function
+let totalIncomeAmount = 0;
+let totalExpenseAmount = 0;
+
+// This function adds a new row to the table
 function addToTable() {
-    // previous functionality
+    // Make sure there's data in the amount field
     if (!userEnteredAmount.trim()) {
         return;
     }
 
+    // Create a new table row and set the values as before
     let dynamicTableBody = document.querySelector('.money-flow-table');
     let dynamicTableData = document.createElement('tr');
     dynamicTableData.classList.add('bg-white', 'border-b', 'border-gray-300');
@@ -70,44 +76,44 @@ function addToTable() {
     let tableRows = document.querySelectorAll('.money-flow-table tr').length;
     dynamicTableData.id = `table-data-${tableRows + 1}`;
 
+    // Add HTML content to the row
     dynamicTableData.innerHTML = `
-    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-        <span class="amount-text default-mode">${userEnteredAmount}</span>
-        <input type="text" class="amount-input p-2 border border-gray-300 rounded-md edit-mode hidden" 
-            value="${userEnteredAmount}">
-    </th>
+        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+            <span class="amount-text default-mode">${userEnteredAmount}</span>
+            <input type="text" class="amount-input p-2 border border-gray-300 rounded-md edit-mode hidden" 
+                value="${userEnteredAmount}">
+        </th>
 
-    <td class="px-6 py-4">
-        <span class="description-text default-mode">${userEnteredDescription === '' ? '-' : userEnteredDescription}</span>
-        <input type="text" class="description-input-second p-2 border border-gray-300 rounded-md edit-mode hidden" 
-            value="${userEnteredDescription}">
-    </td>
+        <td class="px-6 py-4">
+            <span class="description-text default-mode">${userEnteredDescription === '' ? '-' : userEnteredDescription}</span>
+            <input type="text" class="description-input-second p-2 border border-gray-300 rounded-md edit-mode hidden" 
+                value="${userEnteredDescription}">
+        </td>
 
-    <td class="px-6 py-4">
-        <span class="state-text default-mode">${selectedRadio}</span>
-        <div class="hidden edit-mode">
-            <article class="state-dropdown inline-block relative">
-                <select class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
-                    <option>All</option>
-                    <option>Revenue</option>
-                    <option>Expense</option>
-                </select>
-            </article>
-        </div>
-    </td>
+        <td class="px-6 py-4">
+            <span class="state-text default-mode">${selectedRadio}</span>
+            <div class="hidden edit-mode">
+                <article class="state-dropdown inline-block relative">
+                    <select class="state-select select-dropdown p-2 border border-gray-300 rounded-md">
+                        <option>All</option>
+                        <option>Revenue</option>
+                        <option>Expense</option>
+                    </select>
+                </article>
+            </div>
+        </td>
 
-    <td class="px-6 py-4">
-        <div class="flex space-x-2 default-mode">
-            <button class="edit-button text-blue-500 cursor-pointer">Edit</button>
-            <span>|</span>
-            <button class="delete-button text-red-500 cursor-pointer">Delete</button>
-        </div>
-        <div class="hidden edit-mode">
-            <button class="save-button text-green-700 cursor-pointer">Save</button>
-        </div>
-    </td>
+        <td class="px-6 py-4">
+            <div class="flex space-x-2 default-mode">
+                <button class="edit-button text-blue-500 cursor-pointer">Edit</button>
+                <span>|</span>
+                <button class="delete-button text-red-500 cursor-pointer">Delete</button>
+            </div>
+            <div class="hidden edit-mode">
+                <button class="save-button text-green-700 cursor-pointer">Save</button>
+            </div>
+        </td>
     `;
-
 
     let selectElement = dynamicTableData.querySelector('.state-select');
     let options = selectElement.querySelectorAll('option');
@@ -117,15 +123,13 @@ function addToTable() {
         }
     });
 
-  
+    // Append the new row to the table
     dynamicTableBody.appendChild(dynamicTableData);
 
-  
+    // Hide "No Data" message if there are rows in the table
     let checkForDataInTable = document.querySelectorAll('.money-flow-table tr').length;
     let noDatatoshow = document.querySelector('.money-flow-table-no-data');
     let dataToShow = document.querySelector('.money-flow-table-with-data');
-
-    // Hide when "no data" message and show table
     if (checkForDataInTable >= 1) {
         noDatatoshow.style.display = 'none';  
         dataToShow.style.display = 'block';  
@@ -133,6 +137,9 @@ function addToTable() {
         noDatatoshow.style.display = 'flex'; 
         dataToShow.style.display = 'none';  
     }
+
+    // Update the totals based on the selected category (Revenue or Expense)
+    updateTotals(userEnteredAmount, selectedRadio);
 
     // Add event listeners for the new row
     dynamicTableData.querySelector('.delete-button').addEventListener('click', function (event) {
@@ -145,6 +152,37 @@ function addToTable() {
         saveTable(event);
     });
 }
+
+// Function to update totals for income or expense
+function updateTotals(amount, category) {
+    let parsedAmount = parseFloat(amount);
+
+    // Update the corresponding total based on the category
+    if (category === 'Revenue') {
+        totalIncomeAmount += parsedAmount; // Add to total income
+    } else if (category === 'Expense') {
+        totalExpenseAmount += parsedAmount; // Add to total expense
+    }
+
+    // Update the displayed totals outside the function
+    updateDisplayedTotals();
+}
+
+// Function to update the displayed totals (Income, Expense, Net Balance)
+function updateDisplayedTotals() {
+    let totalIncome = document.querySelector('.total-income h3');
+    let totalExpense = document.querySelector('.expence h3');
+    let netBalance = document.querySelector('.net-balance h3');
+
+    // Calculate Net Balance (Income - Expense)
+    let netBalanceAmount = totalIncomeAmount - totalExpenseAmount;
+
+    // Update the displayed values
+    totalIncome.textContent = totalIncomeAmount.toFixed(2);
+    totalExpense.textContent = totalExpenseAmount.toFixed(2);
+    netBalance.textContent = netBalanceAmount.toFixed(2);
+}
+
 
 
 // -----------------------------------------------------Delete Functionality-----------------------------------------------------
@@ -195,3 +233,7 @@ function saveTable(event) {
 
 
 // -----------------------------------------------------Flow Count Functionality-----------------------------------------------------
+let totalIncome = document.querySelector('.total-income h3');
+let totalExpense = document.querySelector('.expense h3');
+let totalNetBalance = document.querySelector('.net-balance');
+
