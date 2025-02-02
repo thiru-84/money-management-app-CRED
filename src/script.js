@@ -57,18 +57,16 @@ radios.forEach(radio => {
 // -----------------------------------------------------Add Table Functionality-----------------------------------------------------
 // Function to add new row
 
-// Initialize total amounts outside the function
 let totalIncomeAmount = 0;
 let totalExpenseAmount = 0;
+let netBalanceAmount = 0;
 
-// This function adds a new row to the table
 function addToTable() {
-    // Make sure there's data in the amount field
+    // Ensure amount is provided
     if (!userEnteredAmount.trim()) {
         return;
     }
 
-    // Create a new table row and set the values as before
     let dynamicTableBody = document.querySelector('.money-flow-table');
     let dynamicTableData = document.createElement('tr');
     dynamicTableData.classList.add('bg-white', 'border-b', 'border-gray-300');
@@ -76,7 +74,6 @@ function addToTable() {
     let tableRows = document.querySelectorAll('.money-flow-table tr').length;
     dynamicTableData.id = `table-data-${tableRows + 1}`;
 
-    // Add HTML content to the row
     dynamicTableData.innerHTML = `
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
             <span class="amount-text default-mode">${userEnteredAmount}</span>
@@ -123,10 +120,9 @@ function addToTable() {
         }
     });
 
-    // Append the new row to the table
     dynamicTableBody.appendChild(dynamicTableData);
 
-    // Hide "No Data" message if there are rows in the table
+    // Update "No Data" message visibility
     let checkForDataInTable = document.querySelectorAll('.money-flow-table tr').length;
     let noDatatoshow = document.querySelector('.money-flow-table-no-data');
     let dataToShow = document.querySelector('.money-flow-table-with-data');
@@ -138,9 +134,6 @@ function addToTable() {
         dataToShow.style.display = 'none';  
     }
 
-    // Update the totals based on the selected category (Revenue or Expense)
-    updateTotals(userEnteredAmount, selectedRadio);
-
     // Add event listeners for the new row
     dynamicTableData.querySelector('.delete-button').addEventListener('click', function (event) {
         deleteTable(event);
@@ -151,20 +144,32 @@ function addToTable() {
     dynamicTableData.querySelector('.save-button').addEventListener('click', function (event) {
         saveTable(event);
     });
+
+    // Update total income, expense, and balance
+    updateTotals(userEnteredAmount, selectedRadio);
 }
 
-// Function to update totals for income or expense
+// Function to update totals for income and expense
 function updateTotals(amount, category) {
     let parsedAmount = parseFloat(amount);
 
-    // Update the corresponding total based on the category
-    if (category === 'Revenue') {
-        totalIncomeAmount += parsedAmount; // Add to total income
-    } else if (category === 'Expense') {
-        totalExpenseAmount += parsedAmount; // Add to total expense
+    // If it's a valid number
+    if (isNaN(parsedAmount)) {
+        console.log("Invalid amount:", amount);
+        return;
     }
 
-    // Update the displayed totals outside the function
+    // Check if it's income (Revenue) or expense (Expense)
+    if (category === 'Revenue' || category === 'All') {
+        totalIncomeAmount += parsedAmount; // Add to income
+    } else if (category === 'Expense') {
+        totalExpenseAmount += parsedAmount; // Add to expense
+    }
+
+    // Calculate net balance
+    netBalanceAmount = totalIncomeAmount - totalExpenseAmount;
+
+    // Update displayed totals
     updateDisplayedTotals();
 }
 
@@ -174,13 +179,9 @@ function updateDisplayedTotals() {
     let totalExpense = document.querySelector('.expence h3');
     let netBalance = document.querySelector('.net-balance h3');
 
-    // Calculate Net Balance (Income - Expense)
-    let netBalanceAmount = totalIncomeAmount - totalExpenseAmount;
-
-    // Update the displayed values
-    totalIncome.textContent = totalIncomeAmount.toFixed(2);
-    totalExpense.textContent = totalExpenseAmount.toFixed(2);
-    netBalance.textContent = netBalanceAmount.toFixed(2);
+    totalIncome.textContent = totalIncomeAmount.toFixed(2); // Display income total
+    totalExpense.textContent = totalExpenseAmount.toFixed(2); // Display expense total
+    netBalance.textContent = netBalanceAmount.toFixed(2); // Display net balance (income - expense)
 }
 
 
