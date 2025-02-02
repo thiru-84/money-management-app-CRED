@@ -20,3 +20,15 @@ Initially, I focused on adding functionality by storing values to dedicated vari
 Then, I completed the delete functionality, which was easy with the ".remove()" method. The progress was smooth until I started focusing on editing and updating the stored data. I encountered multiple issues, and then I needed to focus on local storage as well! I didn't even have any clue about local storage. With instructions and help from ChatGPT, I achieved the update functionality!
 
 The key here is that relying on ChatGPT for solutions is not ideal and sometimes that totally messes up the code, but it helps us complete the project. With an understanding of the programming language we are using, we can leverage AI, but it's not as smart as exaggerated on social media.
+
+# How It Works?
+
+Two use cases, 
+1st use case: who have used the application before and 
+2nd use case: who landed for first time or who deleted the flow history. 
+
+For 2nd use case we show empty field with message saying "Start managing your money!" and once they added a flow they will see table!
+For 1st use case they will have table loaded from local memory.
+
+Both users can able to edit the history, update it infinity times and delete it if they prefer to.
+
